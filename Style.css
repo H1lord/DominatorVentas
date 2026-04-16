@@ -9,3 +9,9 @@ body {
     background: linear-gradient(135deg, #667eea, #764ba2);
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
+
+.logo {
+    height: 70px;
+    margin-top: 25px;
+    margin-left: 10px;
+}
