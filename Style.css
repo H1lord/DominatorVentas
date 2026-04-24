@@ -20,3 +20,41 @@ body {
     margin-top: 25px;
     margin-left: 10px;
 }
+
+/* Botones wts y productos */
+.botones {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* espacio entre botones */
+  height: 100vh; /* centra verticalmente */
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.whatsapp {
+  background-color: #25D366;
+  color: white;
+}
+
+.whatsapp:hover {
+  background-color: #1ebe5d;
+}
+
+.productos {
+  border: 2px solid #7b5cff;
+  color: #7b5cff;
+  background-color: transparent;
+}
+
+.productos:hover {
+  background-color: #7b5cff;
+  color: white;
+}
