@@ -3,7 +3,6 @@ body{
     background: linear-gradient(135deg, #c084fc, #9333ea, #4c1d95);
     font-family: Arial, sans-serif;
     min-height: 100vh;
-    background:red !important;
 }
 
 .productos-page{

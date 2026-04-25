@@ -9,7 +9,7 @@
 
 <!-- Banner -->
 <div class="banner">
-    <a href="Dominator.html">
+    <a href="index.html">
             <img src="img/logo.png" class="logo">
         </a>
 
@@ -51,41 +51,49 @@
 
 </div>
 
+<section class="relacionados">
+    <h2>Productos relacionados</h2>
+
+    <div class="relacionados-slider">
+        <div class="relacionados-track" id="relacionadosTrack"></div>
+    </div>
+</section>
+
 <script>
 
 const productos = {
     1:{nombre:"Arcana Juggernaut", precio:"$29.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana premium de Juggernaut con efectos especiales y diseño exclusivo.", imagen:"img/product-arcana.png"},
-    2:{nombre:"Immortal Axe", precio:"$19.99", estado:"Disponible", rating:"★★★★☆ (4.5)", descripcion:"Item inmortal para Axe, ideal para destacar en combate.", imagen:"img/item2.png"},
-    3:{nombre:"Bundle Phantom Assassin", precio:"$34.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Bundle completo de Phantom Assassin con apariencia legendaria.", imagen:"img/item3.png"},
-    4:{nombre:"Arcana Pudge", precio:"$27.99", estado:"Disponible", rating:"★★★★★ (4.9)", descripcion:"Arcana de Pudge con efectos visuales únicos.", imagen:"img/item4.png"},
-    5:{nombre:"Immortal Invoker", precio:"$24.99", estado:"Disponible", rating:"★★★★☆ (4.6)", descripcion:"Item inmortal para Invoker, perfecto para coleccionistas.", imagen:"img/item5.png"},
-    6:{nombre:"Set Zeus", precio:"$18.99", estado:"Disponible", rating:"★★★★☆ (4.4)", descripcion:"Set completo para Zeus con estilo poderoso.", imagen:"img/item6.png"},
-    7:{nombre:"Arcana Rubick", precio:"$31.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana de Rubick con acabados especiales.", imagen:"img/item7.png"},
-    8:{nombre:"Immortal Sniper", precio:"$15.99", estado:"Disponible", rating:"★★★★☆ (4.3)", descripcion:"Item inmortal para Sniper, ideal para partidas competitivas.", imagen:"img/item8.png"},
-    9:{nombre:"Set Crystal Maiden", precio:"$12.99", estado:"Disponible", rating:"★★★★☆ (4.2)", descripcion:"Set elegante para Crystal Maiden.", imagen:"img/item9.png"},
-    10:{nombre:"Arcana Lina", precio:"$28.99", estado:"Disponible", rating:"★★★★★ (4.8)", descripcion:"Arcana de Lina con efectos visuales llamativos.", imagen:"img/item10.png"},
+    2:{nombre:"Immortal Axe", precio:"$19.99", estado:"Disponible", rating:"★★★★☆ (4.5)", descripcion:"Item inmortal para Axe, ideal para destacar en combate.", imagen:"img/product-axe.png"},
+    3:{nombre:"Bundle Phantom Assassin", precio:"$34.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Bundle completo de Phantom Assassin con apariencia legendaria.", imagen:"img/product-Bundle Phantom Assassin.png"},
+    4:{nombre:"Arcana Pudge", precio:"$27.99", estado:"Disponible", rating:"★★★★★ (4.9)", descripcion:"Arcana de Pudge con efectos visuales únicos.", imagen:"img/product-Arcana Pudge.png"},
+    5:{nombre:"Immortal Invoker", precio:"$24.99", estado:"Disponible", rating:"★★★★☆ (4.6)", descripcion:"Item inmortal para Invoker, perfecto para coleccionistas.", imagen:"img/product-Invoker.png"},
+    6:{nombre:"Set Zeus", precio:"$18.99", estado:"Disponible", rating:"★★★★☆ (4.4)", descripcion:"Set completo para Zeus con estilo poderoso.", imagen:"img/product-Zeus.png"},
+    7:{nombre:"Arcana Rubick", precio:"$31.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana de Rubick con acabados especiales.", imagen:"img/product-rubick.png"},
+    8:{nombre:"Immortal Sniper", precio:"$15.99", estado:"Disponible", rating:"★★★★☆ (4.3)", descripcion:"Item inmortal para Sniper, ideal para partidas competitivas.", imagen:"img/product-sniper.png"},
+    9:{nombre:"Set Crystal Maiden", precio:"$12.99", estado:"Disponible", rating:"★★★★☆ (4.2)", descripcion:"Set elegante para Crystal Maiden.", imagen:"img/product-Crystal Maiden.png"},
+    10:{nombre:"Arcana Lina", precio:"$28.99", estado:"Disponible", rating:"★★★★★ (4.8)", descripcion:"Arcana de Lina con efectos visuales llamativos.", imagen:"img/product-Lina.png"},
 
-    11:{nombre:"Immortal Drow Ranger", precio:"$21.99", estado:"Disponible", rating:"★★★★☆ (4.5)", descripcion:"Item inmortal para Drow Ranger.", imagen:"img/item11.png"},
-    12:{nombre:"Set Anti-Mage", precio:"$17.99", estado:"Disponible", rating:"★★★★☆ (4.4)", descripcion:"Set completo para Anti-Mage.", imagen:"img/item12.png"},
-    13:{nombre:"Arcana Shadow Fiend", precio:"$32.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana oscura para Shadow Fiend.", imagen:"img/item13.png"},
-    14:{nombre:"Immortal Phantom Lancer", precio:"$14.99", estado:"Disponible", rating:"★★★★☆ (4.1)", descripcion:"Item inmortal para Phantom Lancer.", imagen:"img/item14.png"},
-    15:{nombre:"Set Sven", precio:"$16.99", estado:"Disponible", rating:"★★★★☆ (4.3)", descripcion:"Set completo para Sven.", imagen:"img/item15.png"},
-    16:{nombre:"Arcana Terrorblade", precio:"$30.99", estado:"Disponible", rating:"★★★★★ (4.9)", descripcion:"Arcana de Terrorblade con gran presencia visual.", imagen:"img/item16.png"},
-    17:{nombre:"Immortal Slark", precio:"$19.99", estado:"Disponible", rating:"★★★★☆ (4.5)", descripcion:"Item inmortal para Slark.", imagen:"img/item17.png"},
-    18:{nombre:"Set Witch Doctor", precio:"$13.99", estado:"Disponible", rating:"★★★★☆ (4.2)", descripcion:"Set completo para Witch Doctor.", imagen:"img/item18.png"},
-    19:{nombre:"Arcana Queen of Pain", precio:"$35.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana premium para Queen of Pain.", imagen:"img/item19.png"},
-    20:{nombre:"Immortal Mars", precio:"$22.99", estado:"Disponible", rating:"★★★★☆ (4.6)", descripcion:"Item inmortal para Mars.", imagen:"img/item20.png"},
+    11:{nombre:"Immortal Drow Ranger", precio:"$21.99", estado:"Disponible", rating:"★★★★☆ (4.5)", descripcion:"Item inmortal para Drow Ranger.", imagen:"img/product-Drow Ranger.png"},
+    12:{nombre:"Set Anti-Mage", precio:"$17.99", estado:"Disponible", rating:"★★★★☆ (4.4)", descripcion:"Set completo para Anti-Mage.", imagen:"img/product-Anti-Mage.png"},
+    13:{nombre:"Arcana Shadow Fiend", precio:"$32.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana oscura para Shadow Fiend.", imagen:"img/product-Shadow Fiend.png"},
+    14:{nombre:"Immortal Phantom Lancer", precio:"$14.99", estado:"Disponible", rating:"★★★★☆ (4.1)", descripcion:"Item inmortal para Phantom Lancer.", imagen:"img/product-Phantom Lancer.png"},
+    15:{nombre:"Set Sven", precio:"$16.99", estado:"Disponible", rating:"★★★★☆ (4.3)", descripcion:"Set completo para Sven.", imagen:"img/product-Sven.png"},
+    16:{nombre:"Arcana Terrorblade", precio:"$30.99", estado:"Disponible", rating:"★★★★★ (4.9)", descripcion:"Arcana de Terrorblade con gran presencia visual.", imagen:"img/product-Terrorblade.png"},
+    17:{nombre:"Immortal Slark", precio:"$19.99", estado:"Disponible", rating:"★★★★☆ (4.5)", descripcion:"Item inmortal para Slark.", imagen:"img/product-Slark.png"},
+    18:{nombre:"Set Witch Doctor", precio:"$13.99", estado:"Disponible", rating:"★★★★☆ (4.2)", descripcion:"Set completo para Witch Doctor.", imagen:"img/product-Witch Doctor.png"},
+    19:{nombre:"Arcana Queen of Pain", precio:"$35.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana premium para Queen of Pain.", imagen:"img/product-Queen of Pain.png"},
+    20:{nombre:"Immortal Mars", precio:"$22.99", estado:"Disponible", rating:"★★★★☆ (4.6)", descripcion:"Item inmortal para Mars.", imagen:"img/product-Mars.png"},
 
-    21:{nombre:"Set Legion Commander", precio:"$18.99", estado:"Disponible", rating:"★★★★☆ (4.4)", descripcion:"Set completo para Legion Commander.", imagen:"img/item21.png"},
-    22:{nombre:"Arcana Windranger", precio:"$33.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana de Windranger con estilo premium.", imagen:"img/item22.png"},
-    23:{nombre:"Immortal Faceless Void", precio:"$25.99", estado:"Disponible", rating:"★★★★☆ (4.7)", descripcion:"Item inmortal para Faceless Void.", imagen:"img/item23.png"},
-    24:{nombre:"Set Luna", precio:"$15.99", estado:"Disponible", rating:"★★★★☆ (4.2)", descripcion:"Set completo para Luna.", imagen:"img/item24.png"},
-    25:{nombre:"Arcana Ogre Magi", precio:"$26.99", estado:"Disponible", rating:"★★★★☆ (4.6)", descripcion:"Arcana divertida y llamativa para Ogre Magi.", imagen:"img/item25.png"},
-    26:{nombre:"Immortal Templar Assassin", precio:"$20.99", estado:"Disponible", rating:"★★★★☆ (4.5)", descripcion:"Item inmortal para Templar Assassin.", imagen:"img/item26.png"},
-    27:{nombre:"Set Riki", precio:"$11.99", estado:"Disponible", rating:"★★★★☆ (4.1)", descripcion:"Set completo para Riki.", imagen:"img/item27.png"},
-    28:{nombre:"Arcana Wraith King", precio:"$36.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana imponente para Wraith King.", imagen:"img/item28.png"},
-    29:{nombre:"Immortal Earthshaker", precio:"$23.99", estado:"Disponible", rating:"★★★★☆ (4.7)", descripcion:"Item inmortal para Earthshaker.", imagen:"img/item29.png"},
-    30:{nombre:"Set Mirana", precio:"$16.99", estado:"Disponible", rating:"★★★★☆ (4.3)", descripcion:"Set completo para Mirana.", imagen:"img/item30.png"}
+    21:{nombre:"Set Legion Commander", precio:"$18.99", estado:"Disponible", rating:"★★★★☆ (4.4)", descripcion:"Set completo para Legion Commander.", imagen:"img/product-Legion Commander.png"},
+    22:{nombre:"Arcana Windranger", precio:"$33.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana de Windranger con estilo premium.", imagen:"img/product-Windranger.png"},
+    23:{nombre:"Immortal Faceless Void", precio:"$25.99", estado:"Disponible", rating:"★★★★☆ (4.7)", descripcion:"Item inmortal para Faceless Void.", imagen:"img/product-Faceless Void.png"},
+    24:{nombre:"Set Luna", precio:"$15.99", estado:"Disponible", rating:"★★★★☆ (4.2)", descripcion:"Set completo para Luna.", imagen:"img/product-Luna.png"},
+    25:{nombre:"Arcana Ogre Magi", precio:"$26.99", estado:"Disponible", rating:"★★★★☆ (4.6)", descripcion:"Arcana divertida y llamativa para Ogre Magi.", imagen:"img/product-Ogre Magi.png"},
+    26:{nombre:"Immortal Templar Assassin", precio:"$20.99", estado:"Disponible", rating:"★★★★☆ (4.5)", descripcion:"Item inmortal para Templar Assassin.", imagen:"img/product-Templar Assassin.png"},
+    27:{nombre:"Set Riki", precio:"$11.99", estado:"Disponible", rating:"★★★★☆ (4.1)", descripcion:"Set completo para Riki.", imagen:"img/product-Riki.png"},
+    28:{nombre:"Arcana Wraith King", precio:"$36.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana imponente para Wraith King.", imagen:"img/product-Wraith King.png"},
+    29:{nombre:"Immortal Earthshaker", precio:"$23.99", estado:"Disponible", rating:"★★★★☆ (4.7)", descripcion:"Item inmortal para Earthshaker.", imagen:"img/product-Earthshaker.png"},
+    30:{nombre:"Set Mirana", precio:"$16.99", estado:"Disponible", rating:"★★★★☆ (4.3)", descripcion:"Set completo para Mirana.", imagen:"img/product-Mirana.png"}
 };
 
 const params = new URLSearchParams(window.location.search);
@@ -102,7 +110,6 @@ document.getElementById("imagen").src = producto.imagen;
 
 document.getElementById("whatsapp").href =
 "https://wa.me/51999999999?text=Hola quiero comprar " + producto.nombre;
-
 
 const relacionadosTrack = document.getElementById("relacionadosTrack");
 
@@ -125,16 +132,6 @@ relacionadosDuplicados.forEach(([productoId, item]) => {
 });
 
 </script>
-
-</body>
-
-<section class="relacionados">
-    <h2>Productos relacionados</h2>
-
-    <div class="relacionados-slider">
-        <div class="relacionados-track" id="relacionadosTrack"></div>
-    </div>
-</section>
 
 <footer class="footer">
 
@@ -175,4 +172,8 @@ relacionadosDuplicados.forEach(([productoId, item]) => {
     </div>
 
 </footer>
+
+</body>
+
+
 </html>
