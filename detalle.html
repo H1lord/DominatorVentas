@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Detalle Producto</title>
+<link rel="stylesheet" href="detalle.css">
+</head>
+<body>
+
+<!-- Banner -->
+<div class="banner">
+    <a href="Dominator.html">
+            <img src="img/logo.png" class="logo">
+        </a>
+
+    <nav class="menu">
+        <a href="productos.html">Productos</a>
+        <a href="#">Ofertas</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="#" class="btn-whatsapp">Whatsapp</a>
+    </nav>
+</div>
+
+<!-- Detalle -->
+<div class="detalle-producto">
+
+    <div class="imagen-producto">
+        <img id="imagen">
+    </div>
+
+    <div class="info-producto">
+
+        <h1 id="nombre"></h1>
+
+        <p class="precio" id="precio"></p>
+
+        <p class="estado" id="estado"></p>
+
+        <p class="puntuacion" id="rating"></p>
+
+        <a id="whatsapp" href="#" class="btn-contactar">
+            Consultar por WhatsApp
+        </a>
+
+        <div class="descripcion">
+            <h3>Descripción</h3>
+            <p id="descripcion"></p>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const productos = {
+    1:{nombre:"Arcana Juggernaut", precio:"$29.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana premium de Juggernaut con efectos especiales y diseño exclusivo.", imagen:"img/product-arcana.png"},
+    2:{nombre:"Immortal Axe", precio:"$19.99", estado:"Disponible", rating:"★★★★☆ (4.5)", descripcion:"Item inmortal para Axe, ideal para destacar en combate.", imagen:"img/item2.png"},
+    3:{nombre:"Bundle Phantom Assassin", precio:"$34.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Bundle completo de Phantom Assassin con apariencia legendaria.", imagen:"img/item3.png"},
+    4:{nombre:"Arcana Pudge", precio:"$27.99", estado:"Disponible", rating:"★★★★★ (4.9)", descripcion:"Arcana de Pudge con efectos visuales únicos.", imagen:"img/item4.png"},
+    5:{nombre:"Immortal Invoker", precio:"$24.99", estado:"Disponible", rating:"★★★★☆ (4.6)", descripcion:"Item inmortal para Invoker, perfecto para coleccionistas.", imagen:"img/item5.png"},
+    6:{nombre:"Set Zeus", precio:"$18.99", estado:"Disponible", rating:"★★★★☆ (4.4)", descripcion:"Set completo para Zeus con estilo poderoso.", imagen:"img/item6.png"},
+    7:{nombre:"Arcana Rubick", precio:"$31.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana de Rubick con acabados especiales.", imagen:"img/item7.png"},
+    8:{nombre:"Immortal Sniper", precio:"$15.99", estado:"Disponible", rating:"★★★★☆ (4.3)", descripcion:"Item inmortal para Sniper, ideal para partidas competitivas.", imagen:"img/item8.png"},
+    9:{nombre:"Set Crystal Maiden", precio:"$12.99", estado:"Disponible", rating:"★★★★☆ (4.2)", descripcion:"Set elegante para Crystal Maiden.", imagen:"img/item9.png"},
+    10:{nombre:"Arcana Lina", precio:"$28.99", estado:"Disponible", rating:"★★★★★ (4.8)", descripcion:"Arcana de Lina con efectos visuales llamativos.", imagen:"img/item10.png"},
+
+    11:{nombre:"Immortal Drow Ranger", precio:"$21.99", estado:"Disponible", rating:"★★★★☆ (4.5)", descripcion:"Item inmortal para Drow Ranger.", imagen:"img/item11.png"},
+    12:{nombre:"Set Anti-Mage", precio:"$17.99", estado:"Disponible", rating:"★★★★☆ (4.4)", descripcion:"Set completo para Anti-Mage.", imagen:"img/item12.png"},
+    13:{nombre:"Arcana Shadow Fiend", precio:"$32.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana oscura para Shadow Fiend.", imagen:"img/item13.png"},
+    14:{nombre:"Immortal Phantom Lancer", precio:"$14.99", estado:"Disponible", rating:"★★★★☆ (4.1)", descripcion:"Item inmortal para Phantom Lancer.", imagen:"img/item14.png"},
+    15:{nombre:"Set Sven", precio:"$16.99", estado:"Disponible", rating:"★★★★☆ (4.3)", descripcion:"Set completo para Sven.", imagen:"img/item15.png"},
+    16:{nombre:"Arcana Terrorblade", precio:"$30.99", estado:"Disponible", rating:"★★★★★ (4.9)", descripcion:"Arcana de Terrorblade con gran presencia visual.", imagen:"img/item16.png"},
+    17:{nombre:"Immortal Slark", precio:"$19.99", estado:"Disponible", rating:"★★★★☆ (4.5)", descripcion:"Item inmortal para Slark.", imagen:"img/item17.png"},
+    18:{nombre:"Set Witch Doctor", precio:"$13.99", estado:"Disponible", rating:"★★★★☆ (4.2)", descripcion:"Set completo para Witch Doctor.", imagen:"img/item18.png"},
+    19:{nombre:"Arcana Queen of Pain", precio:"$35.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana premium para Queen of Pain.", imagen:"img/item19.png"},
+    20:{nombre:"Immortal Mars", precio:"$22.99", estado:"Disponible", rating:"★★★★☆ (4.6)", descripcion:"Item inmortal para Mars.", imagen:"img/item20.png"},
+
+    21:{nombre:"Set Legion Commander", precio:"$18.99", estado:"Disponible", rating:"★★★★☆ (4.4)", descripcion:"Set completo para Legion Commander.", imagen:"img/item21.png"},
+    22:{nombre:"Arcana Windranger", precio:"$33.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana de Windranger con estilo premium.", imagen:"img/item22.png"},
+    23:{nombre:"Immortal Faceless Void", precio:"$25.99", estado:"Disponible", rating:"★★★★☆ (4.7)", descripcion:"Item inmortal para Faceless Void.", imagen:"img/item23.png"},
+    24:{nombre:"Set Luna", precio:"$15.99", estado:"Disponible", rating:"★★★★☆ (4.2)", descripcion:"Set completo para Luna.", imagen:"img/item24.png"},
+    25:{nombre:"Arcana Ogre Magi", precio:"$26.99", estado:"Disponible", rating:"★★★★☆ (4.6)", descripcion:"Arcana divertida y llamativa para Ogre Magi.", imagen:"img/item25.png"},
+    26:{nombre:"Immortal Templar Assassin", precio:"$20.99", estado:"Disponible", rating:"★★★★☆ (4.5)", descripcion:"Item inmortal para Templar Assassin.", imagen:"img/item26.png"},
+    27:{nombre:"Set Riki", precio:"$11.99", estado:"Disponible", rating:"★★★★☆ (4.1)", descripcion:"Set completo para Riki.", imagen:"img/item27.png"},
+    28:{nombre:"Arcana Wraith King", precio:"$36.99", estado:"Disponible", rating:"★★★★★ (5.0)", descripcion:"Arcana imponente para Wraith King.", imagen:"img/item28.png"},
+    29:{nombre:"Immortal Earthshaker", precio:"$23.99", estado:"Disponible", rating:"★★★★☆ (4.7)", descripcion:"Item inmortal para Earthshaker.", imagen:"img/item29.png"},
+    30:{nombre:"Set Mirana", precio:"$16.99", estado:"Disponible", rating:"★★★★☆ (4.3)", descripcion:"Set completo para Mirana.", imagen:"img/item30.png"}
+};
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+const producto = productos[id];
+
+document.getElementById("nombre").textContent = producto.nombre;
+document.getElementById("precio").textContent = producto.precio;
+document.getElementById("estado").textContent = producto.estado;
+document.getElementById("rating").textContent = producto.rating;
+document.getElementById("descripcion").textContent = producto.descripcion;
+document.getElementById("imagen").src = producto.imagen;
+
+document.getElementById("whatsapp").href =
+"https://wa.me/51999999999?text=Hola quiero comprar " + producto.nombre;
+
+
+const relacionadosTrack = document.getElementById("relacionadosTrack");
+
+const relacionados = Object.entries(productos)
+    .filter(([productoId]) => productoId !== id)
+    .slice(0, 8);
+
+const relacionadosDuplicados = [...relacionados, ...relacionados];
+
+relacionadosDuplicados.forEach(([productoId, item]) => {
+    relacionadosTrack.innerHTML += `
+        <a href="detalle.html?id=${productoId}" class="relacionado-card">
+            <img src="${item.imagen}" alt="${item.nombre}">
+            <div class="relacionado-info">
+                <h3>${item.nombre}</h3>
+                <p>${item.precio}</p>
+            </div>
+        </a>
+    `;
+});
+
+</script>
+
+</body>
+
+<section class="relacionados">
+    <h2>Productos relacionados</h2>
+
+    <div class="relacionados-slider">
+        <div class="relacionados-track" id="relacionadosTrack"></div>
+    </div>
+</section>
+
+<footer class="footer">
+
+    <div class="footer-contenedor">
+
+        <!-- Logo -->
+        <div class="footer-box">
+            <img src="img/logo.png" class="footer-logo">
+            <p>
+                Tu tienda de confianza para inmortales y arcanos de Dota 2.
+                Items de calidad garantizada y los mejores precios del mercado.
+            </p>
+        </div>
+
+        <!-- Categorías -->
+        <div class="footer-box">
+            <h3>Categorías</h3>
+            <ul>
+                <li>Arcanos</li>
+                <li>Inmortales</li>
+                <li>Sets Completos</li>
+                <li>Ofertas</li>
+            </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div class="footer-box">
+            <h3>Contacto</h3>
+            <p>📧 Huamanjesus703@gmail.com</p>
+            <p>📱 +51 992837422</p>
+            <p>📍 Lima, Perú</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Dominator - Todos los derechos reservados
+    </div>
+
+</footer>
+</html>

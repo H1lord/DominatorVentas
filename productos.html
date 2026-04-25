@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos - Dominator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="productos.css">
+
+</head>
+<body>
+
+    <div class="banner">
+        <img src="img/logo.png" class="logo">
+
+        <nav class="menu">
+            
+            <a href="#">Ofertas</a>
+            <a href="#">Contacto</a>
+            <a href="#" class="btn-whatsapp">Whatsapp</a>
+        </nav>
+    </div>
+
+    <section class="productos-page">
+
+        <h1>Todos los Productos</h1>
+
+        <div class="grid-productos" id="lista-productos"></div>
+
+        <div class="paginacion">
+            <button onclick="cambiarPagina(-1)">Anterior</button>
+            <span id="pagina-actual"></span>
+            <button onclick="cambiarPagina(1)">Siguiente</button>
+        </div>
+
+    </section>
+
+    <script>
+        const productos = [
+            {id:1, img:"img/item1.png", nombre:"Arcana Juggernaut", precio:"$29.99", estado:"Disponible"},
+            {id:2, img:"img/item2.png", nombre:"Immortal Axe", precio:"$19.99", estado:"Disponible"},
+            {id:3, img:"img/item3.png", nombre:"Bundle Phantom Assassin", precio:"$34.99", estado:"Disponible"},
+            {id:4, img:"img/item4.png", nombre:"Arcana Pudge", precio:"$27.99", estado:"Disponible"},
+            {id:5, img:"img/item5.png", nombre:"Immortal Invoker", precio:"$24.99", estado:"Disponible"},
+            {id:6, img:"img/item6.png", nombre:"Set Zeus", precio:"$18.99", estado:"Disponible"},
+            {id:7, img:"img/item7.png", nombre:"Arcana Rubick", precio:"$31.99", estado:"Disponible"},
+            {id:8, img:"img/item8.png", nombre:"Immortal Sniper", precio:"$15.99", estado:"Disponible"},
+            {id:9, img:"img/item9.png", nombre:"Set Crystal Maiden", precio:"$12.99", estado:"Disponible"},
+            {id:10, img:"img/item10.png", nombre:"Arcana Lina", precio:"$28.99", estado:"Disponible"},
+
+            {id:11, img:"img/item11.png", nombre:"Immortal Drow Ranger", precio:"$21.99", estado:"Disponible"},
+            {id:12, img:"img/item12.png", nombre:"Set Anti-Mage", precio:"$17.99", estado:"Disponible"},
+            {id:13, img:"img/item13.png", nombre:"Arcana Shadow Fiend", precio:"$32.99", estado:"Disponible"},
+            {id:14, img:"img/item14.png", nombre:"Immortal Phantom Lancer", precio:"$14.99", estado:"Disponible"},
+            {id:15, img:"img/item15.png", nombre:"Set Sven", precio:"$16.99", estado:"Disponible"},
+            {id:16, img:"img/item16.png", nombre:"Arcana Terrorblade", precio:"$30.99", estado:"Disponible"},
+            {id:17, img:"img/item17.png", nombre:"Immortal Slark", precio:"$19.99", estado:"Disponible"},
+            {id:18, img:"img/item18.png", nombre:"Set Witch Doctor", precio:"$13.99", estado:"Disponible"},
+            {id:19, img:"img/item19.png", nombre:"Arcana Queen of Pain", precio:"$35.99", estado:"Disponible"},
+            {id:20, img:"img/item20.png", nombre:"Immortal Mars", precio:"$22.99", estado:"Disponible"},
+
+            {id:21, img:"img/item21.png", nombre:"Set Legion Commander", precio:"$18.99", estado:"Disponible"},
+            {id:22, img:"img/item22.png", nombre:"Arcana Windranger", precio:"$33.99", estado:"Disponible"},
+            {id:23, img:"img/item23.png", nombre:"Immortal Faceless Void", precio:"$25.99", estado:"Disponible"},
+            {id:24, img:"img/item24.png", nombre:"Set Luna", precio:"$15.99", estado:"Disponible"},
+            {id:25, img:"img/item25.png", nombre:"Arcana Ogre Magi", precio:"$26.99", estado:"Disponible"},
+            {id:26, img:"img/item26.png", nombre:"Immortal Templar Assassin", precio:"$20.99", estado:"Disponible"},
+            {id:27, img:"img/item27.png", nombre:"Set Riki", precio:"$11.99", estado:"Disponible"},
+            {id:28, img:"img/item28.png", nombre:"Arcana Wraith King", precio:"$36.99", estado:"Disponible"},
+            {id:29, img:"img/item29.png", nombre:"Immortal Earthshaker", precio:"$23.99", estado:"Disponible"},
+            {id:30, img:"img/item30.png", nombre:"Set Mirana", precio:"$16.99", estado:"Disponible"}
+        ];
+
+        let paginaActual = 1;
+        const productosPorPagina = 10;
+
+        function mostrarProductos() {
+            const lista = document.getElementById("lista-productos");
+            lista.innerHTML = "";
+
+            const inicio = (paginaActual - 1) * productosPorPagina;
+            const fin = inicio + productosPorPagina;
+            const productosPagina = productos.slice(inicio, fin);
+
+            productosPagina.forEach(producto => {
+                lista.innerHTML += `
+                    <div class="producto-card">
+                        <img src="${producto.img}" alt="${producto.nombre}">
+                        <h3>${producto.nombre}</h3>
+                        <p class="precio">${producto.precio}</p>
+                        <p class="estado">${producto.estado}</p>
+                        <a href="detalle.html?id=${producto.id}" class="btn-producto">Ver Producto</a>
+                    </div>
+                `;
+            });
+
+            const totalPaginas = Math.ceil(productos.length / productosPorPagina);
+            document.getElementById("pagina-actual").textContent = `Página ${paginaActual} de ${totalPaginas}`;
+        }
+
+        function cambiarPagina(valor) {
+            const totalPaginas = Math.ceil(productos.length / productosPorPagina);
+
+            paginaActual += valor;
+
+            if (paginaActual < 1) {
+                paginaActual = 1;
+            }
+
+            if (paginaActual > totalPaginas) {
+                paginaActual = totalPaginas;
+            }
+
+            mostrarProductos();
+        }
+
+        mostrarProductos();
+    </script>
+
+</body>
+<footer class="footer">
+
+    <div class="footer-contenedor">
+
+        <!-- Logo -->
+        <div class="footer-box">
+            <img src="img/logo.png" class="footer-logo">
+            <p>
+                Tu tienda de confianza para inmortales y arcanos de Dota 2.
+                Items de calidad garantizada y los mejores precios del mercado.
+            </p>
+        </div>
+
+        <!-- Categorías -->
+        <div class="footer-box">
+            <h3>Categorías</h3>
+            <ul>
+                <li>Arcanos</li>
+                <li>Inmortales</li>
+                <li>Sets Completos</li>
+                <li>Ofertas</li>
+            </ul>
+        </div>
+
+        <!-- Contacto -->
+        <div class="footer-box">
+            <h3>Contacto</h3>
+            <p>📧 Huamanjesus703@gmail.com</p>
+            <p>📱 +51 992837422</p>
+            <p>📍 Lima, Perú</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Dominator - Todos los derechos reservados
+    </div>
+
+</footer>
+</html>
