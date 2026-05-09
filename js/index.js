@@ -75,3 +75,42 @@ productosDestacados.forEach((producto) => {
         </div>
     `;
 });
+
+const fondosConcepto = [
+    "img/background1.png",
+    "img/background2.png",
+    "img/background3.png",
+    "img/background4.png"
+];
+
+const bg1 = document.getElementById("bg1");
+const bg2 = document.getElementById("bg2");
+
+let fondoActual = 0;
+let usandoBg1 = true;
+
+bg1.style.backgroundImage = `url("${fondosConcepto[0]}")`;
+
+function cambiarFondoSuave() {
+    fondoActual++;
+
+    if (fondoActual >= fondosConcepto.length) {
+        fondoActual = 0;
+    }
+
+    const siguienteImagen = fondosConcepto[fondoActual];
+
+    if (usandoBg1) {
+        bg2.style.backgroundImage = `url("${siguienteImagen}")`;
+        bg2.classList.add("activo");
+        bg1.classList.remove("activo");
+    } else {
+        bg1.style.backgroundImage = `url("${siguienteImagen}")`;
+        bg1.classList.add("activo");
+        bg2.classList.remove("activo");
+    }
+
+    usandoBg1 = !usandoBg1;
+}
+
+setInterval(cambiarFondoSuave, 5000);

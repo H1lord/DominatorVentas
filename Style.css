@@ -1,6 +1,11 @@
 body {
     margin: 0;
-    background: rgb(92, 61, 177);
+    background: linear-gradient(
+        180deg,
+        #140b2e 0%,
+        #0f0824 45%,
+        #1e1b4b 100%
+    );
 }
 
 body{
@@ -387,4 +392,56 @@ body{
     z-index: 5;
 
     box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}
+
+.concepto-bg{
+    position: absolute;
+    inset: 0;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 0;
+
+    transition: opacity 1.8s ease-in-out;
+
+    z-index: 0;
+}
+
+.concepto-bg::after{
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(88, 28, 135, 0.78) 0%,
+        rgba(107, 33, 168, 0.68) 45%,
+        rgba(49, 46, 129, 0.38) 75%,
+        rgba(49, 46, 129, 0) 100%
+    );
+}
+
+.concepto-bg.activo{
+    opacity: 1;
+}
+
+/* TODO EL CONTENIDO ENCIMA */
+.banner,
+.title,
+.concepts-slider{
+    position: relative;
+    z-index: 2;
+}
+
+
+#title{
+    color: white;
+
+    text-shadow:
+        0 4px 12px rgba(0,0,0,0.85),
+        0 0 25px rgba(0,0,0,0.55),
+        0 0 45px rgba(0,0,0,0.35);
 }
