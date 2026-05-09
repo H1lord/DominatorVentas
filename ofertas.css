@@ -1,0 +1,168 @@
+.ofertas-page {
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 30px;
+    text-align: center;
+}
+
+.ofertas-page h1 {
+    color: white;
+    font-size: 46px;
+    margin-bottom: 10px;
+}
+
+.ofertas-subtitulo {
+    color: rgba(255,255,255,0.9);
+    font-size: 19px;
+    margin-bottom: 40px;
+}
+
+.grid-ofertas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.oferta-card {
+    position: relative;
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.28);
+    transition: 0.3s;
+}
+
+.oferta-card:hover {
+    transform: translateY(-8px);
+}
+
+.oferta-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+}
+
+.etiqueta-oferta {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #dc2626;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.oferta-info {
+    padding: 22px;
+}
+
+.oferta-info h3 {
+    color: #2e1065;
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.precio-original {
+    color: #777;
+    text-decoration: line-through;
+    font-size: 18px;
+    margin: 0;
+}
+
+.precio-oferta {
+    color: #dc2626;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 8px 0 16px;
+}
+
+.btn-producto {
+    display: inline-block;
+}
+
+/* POPUP */
+.popup-oferta {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-oferta.oculto {
+    display: none;
+}
+
+.popup-oferta-box {
+    background: white;
+    width: 90%;
+    max-width: 430px;
+    padding: 38px;
+    border-radius: 28px;
+    text-align: center;
+    animation: aparecerOferta 0.6s ease;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.4);
+}
+
+.oferta-icono {
+    font-size: 58px;
+    animation: fuego 1s infinite alternate;
+}
+
+.popup-oferta-box h2 {
+    color: #dc2626;
+    font-size: 32px;
+    margin: 12px 0;
+}
+
+.popup-oferta-box p {
+    color: #333;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.popup-oferta-box button {
+    margin-top: 20px;
+    padding: 13px 32px;
+    border: none;
+    border-radius: 16px;
+    background: #7e22ce;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.popup-oferta-box button:hover {
+    background: #581c87;
+}
+
+@keyframes aparecerOferta {
+    from {
+        opacity: 0;
+        transform: scale(0.7) translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes fuego {
+    from {
+        transform: rotate(-8deg) scale(1);
+    }
+    to {
+        transform: rotate(8deg) scale(1.15);
+    }
+}
+
+@media(max-width: 900px) {
+    .grid-ofertas {
+        grid-template-columns: 1fr;
+    }
+}

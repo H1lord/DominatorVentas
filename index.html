@@ -8,15 +8,28 @@
 <body>
 
     <div class="banner">
-        <a href="Dominator.html">
+        <a href="index.html">
             <img src="img/logo.png" class="logo">
         </a>
 
         <nav class="menu">
             <a href="productos.html">Productos</a>
-            <a href="">Ofertas</a>
+            <a href="ofertas.html">Ofertas</a>
             <a href="contacto.html">Contacto</a>
-            <a href="#" class="btn-whatsapp">Whatsapp</a>
+
+            <a href="#" id="btnWhatsapp" class="btn-whatsapp" target="_blank">
+                Whatsapp
+            </a>
+
+            <div class="usuario-menu">
+                <button class="usuario-btn" id="usuarioBtn">
+                    Hola, <span id="nombreUsuario"></span> ▼
+                </button>
+
+                <div class="usuario-dropdown" id="usuarioDropdown">
+                    <button id="cerrarSesion">Cerrar sesión</button>
+                </div>
+            </div>
         </nav>
     </div>
 
@@ -30,154 +43,127 @@
         </div>
 
         <nav class="buttonMenu">
-            <a href="#" class="btn-whatsapp">Consultar por Whatsapp</a>
+            <a href="#" id="btnWhatsappBody" class="btn-whatsapp" target="_blank">
+                Consultar por Whatsapp
+            </a>
+
             <a href="#productos" class="btn-viewProducts">Ver Destacados</a>
         </nav>
     </div>
 
     <div class="concepts-slider">
+        <div class="concepts-track">
 
-    <div class="concepts-track">
+            <div class="card">
+                <h3>Mejores Precios</h3>
+                <p>Items de Dota 2 a precios increíbles</p>
+            </div>
 
-        <div class="card">
-            <h3>Mejores Precios</h3>
-            <p>Items de Dota 2 a precios increíbles</p>
+            <div class="card">
+                <h3>100% Seguro</h3>
+                <p>Transacciones seguras y verificadas</p>
+            </div>
+
+            <div class="card">
+                <h3>Entrega Inmediata</h3>
+                <p>Recibe tus items al instante.</p>
+            </div>
+
+            <div class="card">
+                <h3>Soporte 24/7</h3>
+                <p>Atención rápida en cualquier momento.</p>
+            </div>
+
+            <div class="card">
+                <h3>Items Exclusivos</h3>
+                <p>Encuentra arcanos difíciles de conseguir.</p>
+            </div>
+
+            <div class="card">
+                <h3>Clientes Satisfechos</h3>
+                <p>Más de 1000 ventas exitosas.</p>
+            </div>
+
+            <div class="card">
+                <h3>Mejores Precios</h3>
+                <p>Items de Dota 2 a precios increíbles</p>
+            </div>
+
+            <div class="card">
+                <h3>100% Seguro</h3>
+                <p>Transacciones seguras y verificadas</p>
+            </div>
+
+            <div class="card">
+                <h3>Entrega Inmediata</h3>
+                <p>Recibe tus items al instante.</p>
+            </div>
+
+            <div class="card">
+                <h3>Soporte 24/7</h3>
+                <p>Atención rápida en cualquier momento.</p>
+            </div>
+
+            <div class="card">
+                <h3>Items Exclusivos</h3>
+                <p>Encuentra arcanos difíciles de conseguir.</p>
+            </div>
+
+            <div class="card">
+                <h3>Clientes Satisfechos</h3>
+                <p>Más de 1000 ventas exitosas.</p>
+            </div>
+
         </div>
-
-        <div class="card">
-            <h3>100% Seguro</h3>
-            <p>Transacciones seguras y verificadas</p>
-        </div>
-
-        <div class="card">
-            <h3>Entrega Inmediata</h3>
-            <p>Recibe tus items al instante.</p>
-        </div>
-
-        <div class="card">
-            <h3>Soporte 24/7</h3>
-            <p>Atención rápida en cualquier momento.</p>
-        </div>
-
-        <div class="card">
-            <h3>Items Exclusivos</h3>
-            <p>Encuentra arcanos difíciles de conseguir.</p>
-        </div>
-
-        <div class="card">
-            <h3>Clientes Satisfechos</h3>
-            <p>Más de 1000 ventas exitosas.</p>
-        </div>
-
-        <!-- duplicados para efecto infinito -->
-
-        <div class="card">
-            <h3>Mejores Precios</h3>
-            <p>Items de Dota 2 a precios increíbles</p>
-        </div>
-
-        <div class="card">
-            <h3>100% Seguro</h3>
-            <p>Transacciones seguras y verificadas</p>
-        </div>
-
-        <div class="card">
-            <h3>Entrega Inmediata</h3>
-            <p>Recibe tus items al instante.</p>
-        </div>
-
-        <div class="card">
-            <h3>Soporte 24/7</h3>
-            <p>Atención rápida en cualquier momento.</p>
-        </div>
-
-        <div class="card">
-            <h3>Items Exclusivos</h3>
-            <p>Encuentra arcanos difíciles de conseguir.</p>
-        </div>
-
-        <div class="card">
-            <h3>Clientes Satisfechos</h3>
-            <p>Más de 1000 ventas exitosas.</p>
-        </div>
-
     </div>
-
-</div>
 
     <div class="productos" id="productos">
-
         <h2>Nuestros Productos Destacados</h2>
 
-        <div class="grid-productos">
+        <div class="grid-productos" id="gridProductos">
+            <!-- Los productos se cargan desde js/producto.js -->
+        </div>
+    </div>
 
-            <div class="producto-card">
-                <img src="img/product-arcana.png" alt="Producto 1">
-                <h3>Arcana Juggernaut</h3>
-                <p class="precio">$29.99</p>
-                <p class="estado">Disponible</p>
-                <a href="detalle.html?id=1" class="btn-producto">Ver Producto</a>
+    <footer class="footer">
+
+        <div class="footer-contenedor">
+
+            <div class="footer-box">
+                <img src="img/logo.png" class="footer-logo">
+                <p>
+                    Tu tienda de confianza para inmortales y arcanos de Dota 2.
+                    Items de calidad garantizada y los mejores precios del mercado.
+                </p>
             </div>
 
-            <div class="producto-card">
-                <img src="img/product-axe.png" alt="Producto 2">
-                <h3>Immortal Axe</h3>
-                <p class="precio">$19.99</p>
-                <p class="estado">Disponible</p>
-                <a href="detalle.html?id=2" class="btn-producto">Ver Producto</a>
+            <div class="footer-box">
+                <h3>Categorías</h3>
+                <ul>
+                    <li>Arcanos</li>
+                    <li>Inmortales</li>
+                    <li>Sets Completos</li>
+                    <li>Ofertas</li>
+                </ul>
             </div>
 
-            <div class="producto-card">
-                <img src="img/product-Bundle Phantom Assassin.png" alt="Producto 3">
-                <h3>Bundle Phantom Assassin</h3>
-                <p class="precio">$34.99</p>
-                <p class="estado">Disponible</p>
-                <a href="detalle.html?id=3" class="btn-producto">Ver Producto</a>
+            <div class="footer-box">
+                <h3>Contacto</h3>
+                <p>📧 Huamanjesus703@gmail.com</p>
+                <p>📱 +51 992837422</p>
+                <p>📍 Lima, Perú</p>
             </div>
 
         </div>
 
-    </div>
+        <div class="footer-bottom">
+            © 2026 Dominator - Todos los derechos reservados
+        </div>
+
+    </footer>
+
+    <script src="js/producto.js"></script>
+    <script src="js/index.js"></script>
 
 </body>
-
-<footer class="footer">
-
-    <div class="footer-contenedor">
-
-        <!-- Logo -->
-        <div class="footer-box">
-            <img src="img/logo.png" class="footer-logo">
-            <p>
-                Tu tienda de confianza para inmortales y arcanos de Dota 2.
-                Items de calidad garantizada y los mejores precios del mercado.
-            </p>
-        </div>
-
-        <!-- Categorías -->
-        <div class="footer-box">
-            <h3>Categorías</h3>
-            <ul>
-                <li>Arcanos</li>
-                <li>Inmortales</li>
-                <li>Sets Completos</li>
-                <li>Ofertas</li>
-            </ul>
-        </div>
-
-        <!-- Contacto -->
-        <div class="footer-box">
-            <h3>Contacto</h3>
-            <p>📧 Huamanjesus703@gmail.com</p>
-            <p>📱 +51 992837422</p>
-            <p>📍 Lima, Perú</p>
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        © 2026 Dominator - Todos los derechos reservados
-    </div>
-
-</footer>
 </html>

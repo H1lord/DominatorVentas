@@ -11,37 +11,55 @@ const id = params.get("id");
 
 const producto = productos[id];
 
-if(producto){
+if (producto) {
 
-document.getElementById("nombre").textContent = producto.nombre;
-document.getElementById("precio").textContent = producto.precio;
-document.getElementById("estado").textContent = producto.estado;
-document.getElementById("rating").textContent = producto.rating;
-document.getElementById("descripcion").textContent = producto.descripcion;
-document.getElementById("imagen").src = producto.imagen;
+    document.getElementById("nombre").textContent = producto.nombre;
+    document.getElementById("precio").textContent = producto.precio;
+    document.getElementById("estado").textContent = producto.estado;
+    document.getElementById("rating").textContent = producto.rating;
+    document.getElementById("descripcion").textContent = producto.descripcion;
+    document.getElementById("imagen").src = producto.imagen;
 
-document.getElementById("whatsapp").href =
-"https://wa.me/51992837422?text=Hola quiero comprar " + producto.nombre;
+    document.getElementById("whatsapp").href =
+        "https://wa.me/51992837422?text=" +
+        encodeURIComponent("Hola quiero comprar " + producto.nombre);
 
-const relacionadosTrack = document.getElementById("relacionadosTrack");
+    const relacionadosTrack = document.getElementById("relacionadosTrack");
 
-const relacionados = Object.entries(productos)
-.filter(([productoId]) => productoId != id);
+    const relacionados = Object.entries(productos)
+        .filter(([productoId]) => productoId != id);
 
-const duplicados = [...relacionados, ...relacionados];
+    const duplicados = [...relacionados, ...relacionados];
 
-duplicados.forEach(([productoId, item]) => {
+    duplicados.forEach(([productoId, item]) => {
+        relacionadosTrack.innerHTML += `
+            <a href="detalle.html?id=${productoId}" class="relacionado-card">
+                <img src="${item.imagen}">
+                <div class="relacionado-info">
+                    <h3>${item.nombre}</h3>
+                    <p>${item.precio}</p>
+                </div>
+            </a>
+        `;
+    });
 
-relacionadosTrack.innerHTML += `
-<a href="detalle.html?id=${productoId}" class="relacionado-card">
-<img src="${item.imagen}">
-<div class="relacionado-info">
-<h3>${item.nombre}</h3>
-<p>${item.precio}</p>
-</div>
-</a>
-`;
+    const imagenPrincipal = document.getElementById("imagen");
+    const popupImagen = document.getElementById("popupImagen");
+    const imagenPopup = document.getElementById("imagenPopup");
+    const cerrarPopup = document.getElementById("cerrarPopup");
 
-});
+    imagenPrincipal.addEventListener("click", () => {
+        imagenPopup.src = imagenPrincipal.src;
+        popupImagen.classList.add("activo");
+    });
 
+    cerrarPopup.addEventListener("click", () => {
+        popupImagen.classList.remove("activo");
+    });
+
+    popupImagen.addEventListener("click", (e) => {
+        if (e.target === popupImagen) {
+            popupImagen.classList.remove("activo");
+        }
+    });
 }

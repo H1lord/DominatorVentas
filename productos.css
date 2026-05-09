@@ -109,20 +109,91 @@ body{
     font-weight: bold;
 }
 
-@media(max-width: 1100px){
+@media(max-width: 1200px){
+    .productos-page{
+        max-width: 1000px;
+        padding: 25px;
+    }
+
+    .grid-productos{
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media(max-width: 950px){
+    .productos-page h1{
+        font-size: 36px;
+    }
+
     .grid-productos{
         grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .producto-card img{
+        height: 150px;
     }
 }
 
 @media(max-width: 700px){
+    .productos-page{
+        margin: 45px auto;
+        padding: 20px;
+    }
+
+    .productos-page h1{
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
     .grid-productos{
         grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .producto-card{
+        padding: 16px;
+    }
+
+    .producto-card h3{
+        font-size: 16px;
+        min-height: 40px;
+    }
+
+    .precio{
+        font-size: 20px;
+    }
+
+    .btn-producto{
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+
+    .paginacion{
+        flex-wrap: wrap;
+        gap: 14px;
     }
 }
 
-@media(max-width: 500px){
+@media(max-width: 480px){
+    .productos-page{
+        padding: 16px;
+    }
+
     .grid-productos{
         grid-template-columns: 1fr;
+    }
+
+    .producto-card img{
+        height: 210px;
+    }
+
+    .paginacion{
+        flex-direction: column;
+    }
+
+    .paginacion button{
+        width: 100%;
+        max-width: 260px;
     }
 }

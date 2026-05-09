@@ -297,3 +297,94 @@ body{
     }
 
 }
+
+.usuario-menu {
+    position: relative;
+}
+
+.usuario-btn {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.35);
+    padding: 10px 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.usuario-btn:hover {
+    background: rgba(255,255,255,0.25);
+}
+
+.usuario-dropdown {
+    display: none;
+    position: absolute;
+    top: 48px;
+    right: 0;
+    background: white;
+    min-width: 160px;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+    padding: 10px;
+    z-index: 1000;
+}
+
+.usuario-dropdown.activo {
+    display: block;
+}
+
+.usuario-dropdown button {
+    width: 100%;
+    border: none;
+    background: #dc2626;
+    color: white;
+    padding: 11px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.usuario-dropdown button:hover {
+    background: #991b1b;
+}
+
+.precio-original-card {
+    color: #777;
+    text-decoration: line-through;
+    font-size: 16px;
+    margin: 5px 0 0;
+}
+
+/* SOLO para precios en oferta */
+.precio-oferta {
+    color: #dc2626;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 6px;
+}
+
+/* CARD NECESITA POSITION */
+.producto-card {
+    position: relative;
+}
+
+/* ETIQUETA OFERTA */
+.etiqueta-oferta-card {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+
+    background: #dc2626;
+    color: white;
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    z-index: 5;
+
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+}

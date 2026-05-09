@@ -31,7 +31,7 @@
                 Déjanos tu consulta y te responderemos lo antes posible.
             </p>
 
-            <form action="mailto:Huamanjesus703@gmail.com" method="post" enctype="text/plain">
+            <form id="formContacto">
 
                 <input type="text" name="Nombre" placeholder="Tu nombre" required>
 
@@ -48,6 +48,16 @@
         </div>
 
     </section>
+
+    <div class="popup-contacto" id="popupContacto">
+    <div class="popup-box">
+        <h2 id="popupTitulo"></h2>
+        <p id="popupMensaje"></p>
+        <button id="cerrarPopup">Aceptar</button>
+    </div>
+</div>
+
+<script src="js/contacto.js"></script>
 
 </body>
 </html>

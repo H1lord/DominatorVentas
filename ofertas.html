@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ofertas - Dominator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ofertas.css">
+</head>
+<body>
+
+<div class="banner">
+    <a href="index.html">
+        <img src="img/logo.png" class="logo">
+    </a>
+
+    <nav class="menu">
+        <a href="productos.html">Productos</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="#" id="btnWhatsapp" class="btn-whatsapp" target="_blank">Whatsapp</a>
+    </nav>
+</div>
+
+<section class="ofertas-page">
+    <h1>Ofertas Especiales</h1>
+    <p class="ofertas-subtitulo">Aprovecha los mejores descuentos por tiempo limitado.</p>
+
+    <div class="grid-ofertas" id="gridOfertas"></div>
+</section>
+
+<div class="popup-oferta" id="popupOferta">
+    <div class="popup-oferta-box">
+        <div class="oferta-icono">🔥</div>
+        <h2>Oferta por fin de semana</h2>
+        <p>Disfruta descuentos especiales en productos seleccionados.</p>
+        <button id="cerrarPopupOferta">Aceptar</button>
+    </div>
+</div>
+
+<script src="js/producto.js"></script>
+<script src="js/ofertas.js"></script>
+
+</body>
+</html>
