@@ -8,7 +8,19 @@ const producto = productos.find(
 if (producto) {
 
     document.getElementById("nombre").textContent = producto.nombre;
-    document.getElementById("precio").textContent = producto.precio;
+    
+    const precioDetalle = document.getElementById("precio");
+
+    if (producto.oferta) {
+        precioDetalle.innerHTML = `
+            <span class="etiqueta-oferta-detalle">OFERTA</span>
+            <span class="precio-original-detalle">${producto.precio}</span>
+            <span class="precio-oferta-detalle">${producto.precioOferta}</span>
+        `;
+    } else {
+        precioDetalle.textContent = producto.precio;
+    }
+
     document.getElementById("estado").textContent = producto.estado;
     document.getElementById("rating").textContent = producto.rating;
     document.getElementById("descripcion").textContent = producto.descripcion;
@@ -32,7 +44,17 @@ if (producto) {
                 <img src="${item.img}">
                 <div class="relacionado-info">
                     <h3>${item.nombre}</h3>
-                    <p>${item.precio}</p>
+                    <p>${
+                    item.oferta
+                    ? `
+                        <span class="etiqueta-oferta-card">OFERTA</span>
+                        <p class="precio-original-card">${item.precio}</p>
+                        <p class="precio-oferta-card">${item.precioOferta}</p>
+                    `
+                    : `
+                        <p class="precio-relacionado">${item.precio}</p>
+                    `
+                }</p>
                 </div>
             </a>
         `;
