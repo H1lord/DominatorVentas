@@ -69,3 +69,11 @@
     font-weight: bold;
     margin: 5px 0 15px;
 }
+
+.login-error {
+    color: #dc2626;
+    font-size: 14px;
+    text-align: center;
+    margin: 5px 0 15px;
+    font-weight: bold;
+}

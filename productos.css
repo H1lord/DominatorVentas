@@ -197,3 +197,50 @@ body{
         max-width: 260px;
     }
 }
+
+.filtros-categorias {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.filtro-btn {
+    padding: 12px 22px;
+    border: 2px solid white;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.18);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtro-btn:hover,
+.filtro-btn.activo {
+    background: white;
+    color: #6b21a8;
+}
+
+.paginacion button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.buscador-productos {
+    margin-bottom: 35px;
+}
+
+.buscador-productos input {
+    width: 100%;
+    max-width: 480px;
+    padding: 14px 18px;
+    border: none;
+    border-radius: 16px;
+    font-size: 16px;
+    outline: none;
+    box-shadow: 0 10px 22px rgba(0,0,0,0.20);
+}

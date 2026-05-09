@@ -24,6 +24,21 @@
 
     <section class="productos-page">
 
+        <div class="filtros-categorias">
+            <button class="filtro-btn activo" data-categoria="Todos">Todos</button>
+            <button class="filtro-btn" data-categoria="Arcanos">Arcanos</button>
+            <button class="filtro-btn" data-categoria="Inmortales">Inmortales</button>
+            <button class="filtro-btn" data-categoria="Sets Completos">Sets Completos</button>
+        </div>
+
+        <div class="buscador-productos">
+            <input 
+                type="text" 
+                id="buscadorProductos" 
+                placeholder="Buscar producto..."
+            >
+        </div>
+        
         <h1>Todos los Productos</h1>
 
         <div class="grid-productos" id="lista-productos"></div>
