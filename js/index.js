@@ -10,71 +10,83 @@ if (!usuarioGuardado) {
     const usuarioDropdown = document.getElementById("usuarioDropdown");
     const cerrarSesion = document.getElementById("cerrarSesion");
 
-    nombreUsuario.textContent = usuario.name;
+    if (nombreUsuario) {
+        nombreUsuario.textContent = usuario.name;
+    }
 
-    usuarioBtn.addEventListener("click", () => {
-        usuarioDropdown.classList.toggle("activo");
-    });
+    if (usuarioBtn && usuarioDropdown) {
+        usuarioBtn.addEventListener("click", () => {
+            usuarioDropdown.classList.toggle("activo");
+        });
 
-    cerrarSesion.addEventListener("click", () => {
-        localStorage.removeItem("usuarioLogueado");
-        window.location.href = "login.html";
-    });
+        document.addEventListener("click", (e) => {
+            if (!e.target.closest(".usuario-menu")) {
+                usuarioDropdown.classList.remove("activo");
+            }
+        });
+    }
 
-    document.addEventListener("click", (e) => {
-        if (!e.target.closest(".usuario-menu")) {
-            usuarioDropdown.classList.remove("activo");
-        }
-    });
+    if (cerrarSesion) {
+        cerrarSesion.addEventListener("click", () => {
+            localStorage.removeItem("usuarioLogueado");
+            window.location.href = "login.html";
+        });
+    }
 }
-
-const btnWhatsapp = document.getElementById("btnWhatsapp");
-const btnWhatsappBody = document.getElementById("btnWhatsappBody");
 
 const mensajeWhatsapp = "Hola, quiero más información sobre los productos.";
 
 const urlWhatsapp =
     "https://wa.me/51992837422?text=" + encodeURIComponent(mensajeWhatsapp);
 
-btnWhatsapp.href = urlWhatsapp;
-btnWhatsappBody.href = urlWhatsapp;
+const btnWhatsapp = document.getElementById("btnWhatsapp");
+const btnWhatsappBody = document.getElementById("btnWhatsappBody");
+
+if (btnWhatsapp) {
+    btnWhatsapp.href = urlWhatsapp;
+}
+
+if (btnWhatsappBody) {
+    btnWhatsappBody.href = urlWhatsapp;
+}
 
 const gridProductos = document.getElementById("gridProductos");
 
-const productosDestacados = productos.slice(0, 3);
+if (gridProductos) {
+    const productosDestacados = productos.slice(0, 3);
 
-productosDestacados.forEach((producto) => {
+    productosDestacados.forEach((producto) => {
+        const precioHTML = producto.oferta
+            ? `
+                <p class="precio-original-card">${producto.precio}</p>
+                <p class="precio-oferta">${producto.precioOferta}</p>
+              `
+            : `
+                <p class="precio">${producto.precio}</p>
+              `;
 
-    const precioHTML = producto.oferta
-    ? `
-        <p class="precio-original-card">${producto.precio}</p>
-        <p class="precio-oferta">${producto.precioOferta}</p>
-      `
-    : `
-        <p class="precio">${producto.precio}</p>
-      `;
+        gridProductos.innerHTML += `
+            <div class="producto-card">
 
-    gridProductos.innerHTML += `
-        <div class="producto-card">
+                ${producto.oferta ? `<span class="etiqueta-oferta-card">OFERTA</span>` : ""}
 
-            ${producto.oferta ? `<span class="etiqueta-oferta-card">OFERTA</span>` : ""}
+                <img src="${producto.img}" alt="${producto.nombre}">
 
-            <img src="${producto.img}" alt="${producto.nombre}">
+                <h3>${producto.nombre}</h3>
 
-            <h3>${producto.nombre}</h3>
+                ${precioHTML}
 
-            ${precioHTML}
+                <p class="estado">${producto.estado}</p>
 
-            <p class="estado">${producto.estado}</p>
+                <a href="detalle.html?id=${producto.id}"
+                   class="btn-producto">
+                   Ver Producto
+                </a>
 
-            <a href="detalle.html?id=${producto.id}"
-               class="btn-producto">
-               Ver Producto
-            </a>
-
-        </div>
-    `;
-});
+            </div>
+        `;
+    });
+}
 
 const fondosConcepto = [
     "img/background1.png",
@@ -86,31 +98,72 @@ const fondosConcepto = [
 const bg1 = document.getElementById("bg1");
 const bg2 = document.getElementById("bg2");
 
-let fondoActual = 0;
-let usandoBg1 = true;
+if (bg1 && bg2) {
+    let fondoActual = 0;
+    let usandoBg1 = true;
 
-bg1.style.backgroundImage = `url("${fondosConcepto[0]}")`;
+    bg1.style.backgroundImage = `url("${fondosConcepto[0]}")`;
 
-function cambiarFondoSuave() {
-    fondoActual++;
+    function cambiarFondoSuave() {
+        fondoActual++;
 
-    if (fondoActual >= fondosConcepto.length) {
-        fondoActual = 0;
+        if (fondoActual >= fondosConcepto.length) {
+            fondoActual = 0;
+        }
+
+        const siguienteImagen = fondosConcepto[fondoActual];
+
+        if (usandoBg1) {
+            bg2.style.backgroundImage = `url("${siguienteImagen}")`;
+            bg2.classList.add("activo");
+            bg1.classList.remove("activo");
+        } else {
+            bg1.style.backgroundImage = `url("${siguienteImagen}")`;
+            bg1.classList.add("activo");
+            bg2.classList.remove("activo");
+        }
+
+        usandoBg1 = !usandoBg1;
     }
 
-    const siguienteImagen = fondosConcepto[fondoActual];
-
-    if (usandoBg1) {
-        bg2.style.backgroundImage = `url("${siguienteImagen}")`;
-        bg2.classList.add("activo");
-        bg1.classList.remove("activo");
-    } else {
-        bg1.style.backgroundImage = `url("${siguienteImagen}")`;
-        bg1.classList.add("activo");
-        bg2.classList.remove("activo");
-    }
-
-    usandoBg1 = !usandoBg1;
+    setInterval(cambiarFondoSuave, 5000);
 }
 
-setInterval(cambiarFondoSuave, 5000);
+const gridOfertas = document.getElementById("gridOfertas");
+
+if (gridOfertas) {
+    const productosOferta = productos
+        .filter(producto => producto.oferta)
+        .slice(0, 3);
+
+    productosOferta.forEach((producto) => {
+        gridOfertas.innerHTML += `
+            <div class="producto-card">
+
+                <span class="etiqueta-oferta-card">
+                    OFERTA
+                </span>
+
+                <img src="${producto.img}" alt="${producto.nombre}">
+
+                <h3>${producto.nombre}</h3>
+
+                <p class="precio-original-card">
+                    ${producto.precio}
+                </p>
+
+                <p class="precio-oferta">
+                    ${producto.precioOferta}
+                </p>
+
+                <p class="estado">${producto.estado}</p>
+
+                <a href="detalle.html?id=${producto.id}"
+                   class="btn-producto">
+                   Ver Producto
+                </a>
+
+            </div>
+        `;
+    });
+}

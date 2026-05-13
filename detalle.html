@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Detalle Producto</title>
+<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="detalle.css">
 </head>
 <body>
@@ -18,6 +19,20 @@
         <a href="ofertas.html">Ofertas</a>
         <a href="contacto.html">Contacto</a>
         <a href="#" class="btn-whatsapp">Whatsapp</a>
+
+        <div class="usuario-menu">
+
+            <button class="usuario-btn" id="usuarioBtn">
+                Hola, <span id="nombreUsuario"></span> ▼
+            </button>
+
+            <div class="usuario-dropdown" id="usuarioDropdown">
+                <button id="cerrarSesion">
+                    Cerrar sesión
+                </button>
+            </div>
+
+        </div>
     </nav>
 </div>
 
@@ -64,6 +79,7 @@
     <img id="imagenPopup">
 </div>
 <script src="js/producto.js"></script>
+<script src="js/auth-ui.js"></script>
 <script src="js/detalle.js"></script>
 
 <footer class="footer">

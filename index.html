@@ -26,13 +26,17 @@
             </a>
 
             <div class="usuario-menu">
+
                 <button class="usuario-btn" id="usuarioBtn">
                     Hola, <span id="nombreUsuario"></span> ▼
                 </button>
 
                 <div class="usuario-dropdown" id="usuarioDropdown">
-                    <button id="cerrarSesion">Cerrar sesión</button>
+                    <button id="cerrarSesion">
+                        Cerrar sesión
+                    </button>
                 </div>
+
             </div>
         </nav>
     </div>
@@ -131,6 +135,22 @@
         </div>
     </div>
 
+    <div class="ofertas-home">
+
+        <h2>🔥 Ofertas del Fin de Semana</h2>
+
+        <div class="grid-productos" id="gridOfertas">
+            <!-- ofertas desde JS -->
+        </div>
+
+        <div class="contenedor-ver-mas">
+            <a href="ofertas.html" class="btn-ver-mas-ofertas">
+                Ver más ofertas
+            </a>
+        </div>
+
+    </div>
+
     <footer class="footer">
 
         <div class="footer-contenedor">
@@ -170,6 +190,22 @@
 
     <script src="js/producto.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/auth-ui.js"></script>
+
+    <div class="chatbot-flotante">
+        <button class="chatbot-boton" id="chatbotBoton">💬</button>
+
+        <div class="chatbot-panel" id="chatbotPanel">
+            <div class="chatbot-header">
+                <span>Dominator Bot</span>
+                <button id="cerrarChatbot">×</button>
+            </div>
+
+            <div class="chatbot-body" id="chatbotBody"></div>
+        </div>
+    </div>
+
+    <script src="js/chatbot.js"></script>
 
 </body>
 </html>

@@ -445,3 +445,134 @@ body{
         0 0 25px rgba(0,0,0,0.55),
         0 0 45px rgba(0,0,0,0.35);
 }
+
+.ofertas-home{
+    margin-top: 90px;
+    text-align: center;
+}
+
+.ofertas-home h2{
+    color: white;
+    font-size: 42px;
+    margin-bottom: 40px;
+}
+
+.contenedor-ver-mas{
+    margin-top: 45px;
+}
+
+.btn-ver-mas-ofertas{
+    display: inline-block;
+
+    padding: 16px 34px;
+
+    background: linear-gradient(
+        90deg,
+        #f97316,
+        #ea580c
+    );
+
+    color: white;
+    text-decoration: none;
+
+    border-radius: 18px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.30);
+}
+
+.btn-ver-mas-ofertas:hover{
+    transform: translateY(-4px) scale(1.03);
+
+    filter: brightness(1.08);
+}
+
+.chatbot-flotante {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 9999;
+}
+
+.chatbot-boton {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    border: none;
+    background: #25D366;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+.chatbot-panel {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 78px;
+    width: 320px;
+    background: white;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+}
+
+.chatbot-panel.activo {
+    display: block;
+}
+
+.chatbot-header {
+    background: #581c87;
+    color: white;
+    padding: 15px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+
+.chatbot-header button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.chatbot-body {
+    padding: 18px;
+}
+
+.bot-msg {
+    background: #f3e8ff;
+    color: #2e1065;
+    padding: 13px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    font-size: 15px;
+}
+
+.chatbot-opciones {
+    display: grid;
+    gap: 10px;
+}
+
+.chatbot-opcion {
+    padding: 11px;
+    border: none;
+    border-radius: 12px;
+    background: #7e22ce;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.chatbot-opcion:hover {
+    background: #581c87;
+}
