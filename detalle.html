@@ -66,6 +66,38 @@
 
 </div>
 
+<section class="comentarios-producto">
+
+    <h2>Valoraciones de Clientes</h2>
+
+    <div class="formulario-comentario">
+
+        <select id="ratingComentario">
+            <option value="">Calificación</option>
+            <option value="★★★★★">★★★★★</option>
+            <option value="★★★★☆">★★★★☆</option>
+            <option value="★★★☆☆">★★★☆☆</option>
+            <option value="★★☆☆☆">★★☆☆☆</option>
+            <option value="★☆☆☆☆">★☆☆☆☆</option>
+        </select>
+
+        <textarea
+            id="textoComentario"
+            placeholder="Escribe tu comentario..."
+        ></textarea>
+
+        <button id="btnEnviarComentario">
+            Enviar comentario
+        </button>
+
+        <p id="errorComentario"></p>
+
+    </div>
+
+    <div class="comentarios-grid" id="comentariosGrid"></div>
+
+</section>
+
 <section class="relacionados">
     <h2>Productos relacionados</h2>
 

@@ -437,3 +437,146 @@ body{
     font-weight: bold;
     margin-bottom: 8px;
 }
+
+.relacionados-track:hover {
+    animation-play-state: paused;
+}
+
+.relacionado-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.relacionado-card:hover {
+    transform: translateY(-8px) scale(1.04);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.35);
+}
+
+.formulario-comentario{
+    background: rgba(255,255,255,0.92);
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    margin-bottom: 40px;
+
+    box-shadow: 0 15px 35px rgba(0,0,0,0.22);
+}
+
+.formulario-comentario select,
+.formulario-comentario textarea{
+    width: 100%;
+
+    border: none;
+
+    border-radius: 16px;
+
+    padding: 16px;
+
+    margin-bottom: 18px;
+
+    font-size: 16px;
+
+    box-sizing: border-box;
+}
+
+.formulario-comentario textarea{
+    min-height: 130px;
+    resize: vertical;
+}
+
+.formulario-comentario button{
+    border: none;
+
+    background: #7e22ce;
+
+    color: white;
+
+    padding: 14px 26px;
+
+    border-radius: 16px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.formulario-comentario button:hover{
+    background: #581c87;
+}
+
+#errorComentario{
+    color: #dc2626;
+    margin-top: 14px;
+    font-weight: bold;
+}
+
+.comentarios-producto {
+    max-width: 1300px;
+    margin: 70px auto;
+    padding: 0 30px;
+}
+
+.comentarios-producto h2 {
+    color: white;
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 35px;
+}
+
+.comentarios-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.comentario-card {
+    background: rgba(255,255,255,0.92);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    transition: 0.3s;
+}
+
+.comentario-card:hover {
+    transform: translateY(-6px);
+}
+
+.comentario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.comentario-header strong {
+    color: #2e1065;
+    font-size: 18px;
+}
+
+.comentario-header span {
+    color: #f59e0b;
+    font-size: 20px;
+}
+
+.comentario-card p {
+    color: #444;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px){
+
+    .comentarios-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .comentarios-producto h2{
+        font-size: 30px;
+    }
+}
