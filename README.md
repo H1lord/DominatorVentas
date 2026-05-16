@@ -18,12 +18,12 @@ La metodología utilizada consistió en trabajar en conjunto, integrar los avanc
 
 La distribución de tareas dentro del proyecto fue la siguiente:
 
-Integrante -	Actividades realizadas
-Jesus Huaman -	Desarrollo de la vista Index, vista Productos y vista Detalle de Productos.
-Antoni Cardenas -	Desarrollo de la vista Ofertas, vista Contacto y vista Login.
-Wilian Quinto -	Desarrollo de la vista Registro.
-Meg Noureddine Tihuay Iñapi -	Desarrollo y apoyo en el CSS de las vistas.
-Carlos Chero -	Desarrollo del JavaScript de todas las vistas, animaciones, simulaciones e interacciones dinámicas del proyecto.
+Integrante :	Actividades realizadas
+- Jesus Huaman :	Desarrollo de la vista Index, vista Productos y vista Detalle de Productos.
+- Antoni Cardenas :	Desarrollo de la vista Ofertas, vista Contacto y vista Login.
+- Wilian Quinto :	Desarrollo de la vista Registro.
+- Meg Noureddine Tihuay Iñapi :	Desarrollo y apoyo en el CSS de las vistas.
+- Carlos Chero :	Desarrollo del JavaScript de todas las vistas, animaciones, simulaciones e interacciones dinámicas del proyecto.
 
 ## Participación del equipo
 Integrante	Participación
@@ -103,14 +103,12 @@ DominatorVentas/
 ├── login.html
 ├── register.html
 ├── 404.html
-│
-├── css/
-│   ├── style.css
-│   ├── productos.css
-│   ├── detalle.css
-│   ├── ofertas.css
-│   ├── contacto.css
-│   └── auth.css
+├── style.css
+├── productos.css
+├── detalle.css
+├── ofertas.css
+├── contacto.css
+└── auth.css
 │
 ├── js/
 │   ├── index.js
